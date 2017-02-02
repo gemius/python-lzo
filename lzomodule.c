@@ -226,7 +226,7 @@ decompress(PyObject *dummy, PyObject *args)
     out = (lzo_bytep) PyString_AsString(result_str);
 #endif
     new_len = out_len;
-    err = lzo1x_decompress_safe(in, in_len, out, &new_len, NULL);
+    err = lzo1y_decompress_safe(in, in_len, out, &new_len, NULL);
     if (err != LZO_E_OK || (header && new_len != out_len) )
     {
         Py_DECREF(result_str);
